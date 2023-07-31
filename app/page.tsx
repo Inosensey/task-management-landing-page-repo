@@ -66,7 +66,7 @@ export default function Home() {
       </section>
       <section
         ref={taskManagementRef}
-        className={`overflow-hidden phone:mt-44 phone:w-full phone:h-[320px] mdphone:h-[330px] flex justify-center items-center relative`}
+        className={`overflow-hidden phone:mt-44 phone:w-full phone:h-[320px] mdphone:h-[400px] flex justify-center items-center relative`}
       >
         <div
           className={`${

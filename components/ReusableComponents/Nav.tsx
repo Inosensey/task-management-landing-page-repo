@@ -123,7 +123,7 @@ const Nav = () => {
           variants={ulVariant}
           animate={ulAnimation}
           initial="hidden"
-          className="flex phone:flex-1 phone:flex-col phone:w-full phone:justify-center phone:gap-8 desktop:w-[700px] desktop:gap-8 desktop:items-center"
+          className="flex phone:flex-1 phone:flex-col phone:w-full phone:mt-12 phone:gap-8 desktop:w-[700px] desktop:gap-8 desktop:items-center"
         >
           <NavChoices
             animationProperties={{
@@ -166,22 +166,30 @@ const Nav = () => {
           // showNavBar ? setShowNavBar(false) : setShowNavBar(true)
           animateSidebar()
         }
-        className={`border items-center p-2 z-30 right-0 top-2 w-14 flex flex-col gap-2 cursor-pointer phone:fixed desktop:hidden`}
+        className={`rounded-md items-center p-2 right-2 top-2 w-14 flex flex-col gap-2 z-30 cursor-pointer ease-in-out duration-300 phone:fixed desktop:hidden ${
+          scrollDirection === "Steady"
+            ? "top-0"
+            : scrollDirection === "Down"
+            ? "-top-28"
+            : "top-0"
+        }`}
       >
         <div
           className={`${
-            showNavBar && "rotate-45 origin-top-left"
-          } ease-in-out duration-100 w-[87%] border-2 border-LightPrimary`}
+            showNavBar &&
+            "rotate-45 origin-top-left translate-y-[50%] translate-x-[16%]"
+          } ease-in-out duration-100 w-[75%] border-2 border-LightPrimary`}
         ></div>
         <div
           className={`${
             showNavBar && "origin-center opacity-0"
-          } ease-in-out duration-100 w-[87%] border-2 border-LightPrimary`}
+          } ease-in-out duration-100 w-[75%] border-2 border-LightPrimary`}
         ></div>
         <div
           className={`${
-            showNavBar && "-rotate-45 origin-bottom-left"
-          } ease-in-out duration-100 w-[87%] border-2 border-LightPrimary`}
+            showNavBar &&
+            "-rotate-45 origin-bottom-left -translate-y-[20%] translate-x-[10%]"
+          } ease-in-out duration-100 w-[75%] border-2 border-LightPrimary`}
         ></div>
       </div>
     </>
