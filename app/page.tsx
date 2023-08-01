@@ -129,7 +129,24 @@ export default function Home() {
           icones={<MaterialSymbolsAnalyticsRounded />}
         />
       </section>
-      <section className="p-4 phone:mt-48 phone:w-full flex phone:flex-col gap-6 bg-LightSecondary"></section>
+      <section className="p-4 phone:mt-48 phone:w-full flex phone:flex-col gap-6 bg-Secondary">
+        <h1 className="text-center phone:text-3xl font-bold text-LightPrimary">
+          Stay up to date
+        </h1>
+        <p className="text-center phone:text-lg leading-8">
+          To stay in the loop with the latest updates and feature enhancements,
+          don&rsquo;t forget to submit your profile! By providing your information,
+          you&rsquo;ll receive exclusive access to upcoming features, improvements,
+          and exciting releases.
+        </p>
+        <input className="p-3 w-10/12 rounded-lg mx-auto my-0 text-black outline-none" type="email" placeholder="Enter your Email" name="email" />
+        <button
+          className="w-max my-0 mx-auto py-3 px-6 bg-LightPrimary rounded-lg cursor-pointer hover:scale-110 active:scale-95 ease-in-out duration-100"
+          type="button"
+        >
+          Subscribe
+        </button>
+      </section>
     </main>
   );
 }
