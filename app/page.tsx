@@ -45,7 +45,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <main className="flex flex-col items-center relative justify-between bg-Primary">
+    <main className="flex flex-col items-center relative justify-between bg-Primary font-Roboto">
       <section className="phone:w-full phone:h-[550px] relative laptop:isolate laptop:after:absolute laptop:after:bg-Secondary laptop:after:inset-0 laptop:after:-z-10 laptop:after:content-[''] laptop:after:skew-y-[4deg]">
         <div className="phone:absolute phone:w-[95%] p-1.5 flex flex-col gap-5 text-center phone:top-2/4 phone:left-2/4 phone:-translate-y-2/4 phone:-translate-x-2/4">
           <h1 className="phone:text-4xl font-bold">
@@ -135,11 +135,16 @@ export default function Home() {
         </h1>
         <p className="text-center phone:text-lg leading-8">
           To stay in the loop with the latest updates and feature enhancements,
-          don&rsquo;t forget to submit your profile! By providing your information,
-          you&rsquo;ll receive exclusive access to upcoming features, improvements,
-          and exciting releases.
+          don&rsquo;t forget to submit your profile! By providing your
+          information, you&rsquo;ll receive exclusive access to upcoming
+          features, improvements, and exciting releases.
         </p>
-        <input className="p-3 w-10/12 rounded-lg mx-auto my-0 text-black outline-none" type="email" placeholder="Enter your Email" name="email" />
+        <input
+          className="p-3 w-10/12 rounded-lg mx-auto my-0 text-black outline-none"
+          type="email"
+          placeholder="Enter your Email"
+          name="email"
+        />
         <button
           className="w-max my-0 mx-auto py-3 px-6 bg-LightPrimary rounded-lg cursor-pointer hover:scale-110 active:scale-95 ease-in-out duration-100"
           type="button"
