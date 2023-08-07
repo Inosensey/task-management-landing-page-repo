@@ -46,13 +46,13 @@ export default function Home() {
   }, []);
   return (
     <main className="flex flex-col items-center relative justify-between bg-Primary font-Roboto">
-      <section className="phone:w-full phone:h-[550px] relative laptop:isolate laptop:after:absolute laptop:after:bg-Secondary laptop:after:inset-0 laptop:after:-z-10 laptop:after:content-[''] laptop:after:skew-y-[4deg]">
-        <div className="phone:absolute phone:w-[95%] p-1.5 flex flex-col gap-5 text-center phone:top-2/4 phone:left-2/4 phone:-translate-y-2/4 phone:-translate-x-2/4">
-          <h1 className="phone:text-4xl font-bold">
+      <section className="relative phone:w-full phone:h-[550px] laptop:h-[650px] laptop:isolate laptop:after:absolute laptop:after:bg-Secondary laptop:after:inset-0 laptop:after:-z-10 laptop:after:content-[''] laptop:after:skew-y-[4deg]">
+        <div className="p-1.5 flex flex-col gap-5 text-center phone:absolute phone:w-[95%] phone:top-2/4 phone:left-2/4 phone:-translate-y-2/4 phone:-translate-x-2/4 tablet:max-w-[640px]">
+          <h1 className="phone:text-4xl tablet:text-5xl font-bold">
             <span className="text-LightPrimary">TaskFlow</span>
           </h1>
-          <h2 className="phone:text-3xl font-bold">Master Your Productivity</h2>
-          <p className="py-2 px-6 phone:text-base text-LightSecondary">
+          <h2 className="phone:text-3xl table:text-4xl font-bold">Master Your Productivity</h2>
+          <p className="py-2 px-6 phone:text-base tablet:text-lg text-LightSecondary">
             Managing tasks made easy with TaskFlow, the all-in-one task
             management solution. Streamline your workflow, stay organized, and
             boost productivity with intuitive task creation, seamless
@@ -66,7 +66,7 @@ export default function Home() {
       </section>
       <section
         ref={taskManagementRef}
-        className={`overflow-hidden phone:mt-44 phone:w-full phone:h-[320px] mdphone:h-[400px] flex justify-center items-center relative`}
+        className={`overflow-hidden phone:mt-44 flex justify-center items-center relative phone:w-full phone:h-[320px] mdphone:h-[400px] tablet:h-[480px] tablet:max-w-[600px]`}
       >
         <div
           className={`${
@@ -80,8 +80,8 @@ export default function Home() {
           }`}
         ></div>
       </section>
-      <section className="p-4 phone:mt-48 phone:w-full flex phone:flex-col gap-6">
-        <div className="flex flex-col gap-3 mb-14">
+      <section className="p-4 phone:mt-48 phone:w-full flex phone:flex-col tablet:items-center gap-6">
+        <div className="flex flex-col gap-3 mb-14 mx-auto tablet:max-w-[620px]">
           <h1 className="text-center phone:text-3xl font-bold text-LightPrimary">
             Meet TaskFlow
           </h1>
@@ -133,14 +133,14 @@ export default function Home() {
         <h1 className="text-center phone:text-3xl font-bold text-LightPrimary">
           Stay up to date
         </h1>
-        <p className="text-center phone:text-lg leading-8">
+        <p className="text-center phone:text-lg leading-8 mx-auto tablet:tablet:max-w-[540px]">
           To stay in the loop with the latest updates and feature enhancements,
           don&rsquo;t forget to submit your profile! By providing your
           information, you&rsquo;ll receive exclusive access to upcoming
           features, improvements, and exciting releases.
         </p>
         <input
-          className="p-3 w-10/12 rounded-lg mx-auto my-0 text-black outline-none"
+          className="p-3 w-10/12 rounded-lg mx-auto my-0 text-black outline-none tablet:max-w-[460px]"
           type="email"
           placeholder="Enter your Email"
           name="email"
