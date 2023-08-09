@@ -35,7 +35,7 @@ const featureVariants: Variants = {
 export const Features = ({ image, name, desc, icones }: props) => {
   return (
     <motion.div
-      className="phone:w-full phone:h-[400px] tablet:max-w-[520px]"
+      className="phone:w-full phone:h-[400px] tablet:max-w-[450px] laptop:w-[33%]"
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}

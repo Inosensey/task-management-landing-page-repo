@@ -108,7 +108,7 @@ const Nav = () => {
         variants={sidebarVariant}
         animate={sidebarAnimation}
         initial="hidden"
-        className={`fixed bg-Secondary flex z-20 phone:flex-col phone:h-screen phone:w-72 desktop:ease-in-out desktop:duration-300 desktop:justify-center desktop:h-12 desktop:w-full ${
+        className={`fixed bg-Secondary flex z-20 phone:flex-col phone:h-screen phone:w-72 laptop:ease-in-out laptop:duration-300 laptop:justify-center laptop:h-12 laptop:w-full ${
           scrollDirection === "Steady"
             ? "desktop:top-0"
             : scrollDirection === "Down"
@@ -123,7 +123,7 @@ const Nav = () => {
           variants={ulVariant}
           animate={ulAnimation}
           initial="hidden"
-          className="flex phone:flex-1 phone:flex-col phone:w-full phone:mt-12 phone:gap-8 desktop:w-[700px] desktop:gap-8 desktop:items-center"
+          className="flex phone:flex-1 phone:flex-col phone:w-full phone:mt-12 phone:gap-8 laptop:w-[700px] laptop:gap-8 laptop:items-center"
         >
           <NavChoices
             animationProperties={{
@@ -166,7 +166,7 @@ const Nav = () => {
           // showNavBar ? setShowNavBar(false) : setShowNavBar(true)
           animateSidebar()
         }
-        className={`rounded-md items-center p-2 right-2 top-2 w-14 flex flex-col gap-2 z-30 cursor-pointer ease-in-out duration-300 phone:fixed desktop:hidden ${
+        className={`rounded-md items-center p-2 right-2 top-2 w-14 flex flex-col gap-2 z-30 cursor-pointer ease-in-out duration-300 phone:fixed laptop:hidden ${
           scrollDirection === "Steady"
             ? "top-0"
             : scrollDirection === "Down"
