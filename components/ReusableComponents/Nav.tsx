@@ -15,11 +15,15 @@ const Nav = () => {
   const [lastViewPoint, setLastViewPoint] = useState<number>(0);
   const [scrollDirection, setScrollDirection] = useState<string>("Steady");
   const [showNavBar, setShowNavBar] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 760 && true);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // useEffect
   useEffect(() => {
-    
+    if(window.innerWidth < 760) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
     window.addEventListener("scroll", saveViewPoint);
 
     return () => {
@@ -61,9 +65,6 @@ const Nav = () => {
     hidden: {
       x: "-100%",
     },
-    initial: {
-      x: isMobile ? "-100%" : "0%",
-    },
     show: {
       x: "0%",
       transition: {
@@ -85,7 +86,7 @@ const Nav = () => {
   };
   const liVariant = {
     hidden: {
-      x: isMobile ? "-100%" : "0%",
+      x: "-100%",
     },
     show: {
       x: "0%",
@@ -113,8 +114,7 @@ const Nav = () => {
       <motion.nav
         variants={sidebarVariant}
         animate={sidebarAnimation}
-        initial="initial"
-        className={`fixed bg-Secondary flex z-20 phone:flex-col phone:h-screen phone:w-72 laptop:items-center laptop:h-12 laptop:flex-row laptop:ease-in-out laptop:duration-300 laptop:justify-center laptop:w-full ${
+        className={`fixed bg-Secondary flex z-20 phone:-translate-x-[100%] phone:flex-col phone:h-screen phone:w-72 laptop:translate-x-[0%] laptop:items-center laptop:h-12 laptop:flex-row laptop:ease-in-out laptop:duration-300 laptop:justify-center laptop:w-full ${
           scrollDirection === "Steady"
             ? "desktop:top-0"
             : scrollDirection === "Down"

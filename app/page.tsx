@@ -1,9 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+
 import { Features } from "@/components/HomeComponents/Features";
+
 import "./fontawesomeImports";
 import "./home.css";
+
 import IcBaselineLightbulbCircle from "@/icones/IcBaselineLightbulbCircle";
 import IcBaselineCircleNotifications from "@/icones/IcBaselineCircleNotifications";
 import CarbonFlow from "@/icones/CarbonFlow";
