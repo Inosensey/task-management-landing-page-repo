@@ -28,7 +28,7 @@
   transition: all 0.4s ease-out;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 769px) {
   .progress-bar {
     background: radial-gradient(closest-side, #393E46 98%, transparent 80% 100%),
       conic-gradient(#00adb5 calc(var(--progress-value) * 1%), #eeeeee 0);

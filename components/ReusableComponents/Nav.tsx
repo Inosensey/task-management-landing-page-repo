@@ -15,7 +15,24 @@ const Nav = () => {
   const [lastViewPoint, setLastViewPoint] = useState<number>(0);
   const [scrollDirection, setScrollDirection] = useState<string>("Steady");
   const [showNavBar, setShowNavBar] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 760 && true);
 
+  // useEffect
+  useEffect(() => {
+    
+    window.addEventListener("scroll", saveViewPoint);
+
+    return () => {
+      window.removeEventListener("scroll", saveViewPoint);
+    };
+  }, []);
+
+  useEffect(() => {
+    checkIfUserIsScrolling();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentViewPoint]);
+  
   // Save view point
   const saveViewPoint = () => {
     setCurrentViewPoint(window.scrollY);
@@ -44,6 +61,9 @@ const Nav = () => {
     hidden: {
       x: "-100%",
     },
+    initial: {
+      x: isMobile ? "-100%" : "0%",
+    },
     show: {
       x: "0%",
       transition: {
@@ -53,7 +73,7 @@ const Nav = () => {
   };
   const ulVariant = {
     hidden: {
-      opacity: 0,
+      opacity: isMobile ? 0 : 1,
     },
     show: {
       opacity: 1,
@@ -65,7 +85,7 @@ const Nav = () => {
   };
   const liVariant = {
     hidden: {
-      x: "-100%",
+      x: isMobile ? "-100%" : "0%",
     },
     show: {
       x: "0%",
@@ -87,28 +107,14 @@ const Nav = () => {
     setShowNavBar((current) => !current);
   };
 
-  // useEffect
-  useEffect(() => {
-    window.addEventListener("scroll", saveViewPoint);
-
-    return () => {
-      window.removeEventListener("scroll", saveViewPoint);
-    };
-  }, []);
-
-  useEffect(() => {
-    checkIfUserIsScrolling();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentViewPoint]);
   return (
     <>
       {showNavBar && <Overlay clickEvent={() => animateSidebar()} />}
       <motion.nav
         variants={sidebarVariant}
         animate={sidebarAnimation}
-        initial="hidden"
-        className={`fixed bg-Secondary flex z-20 phone:flex-col phone:h-screen phone:w-72 laptop:ease-in-out laptop:duration-300 laptop:justify-center laptop:h-12 laptop:w-full ${
+        initial="initial"
+        className={`fixed bg-Secondary flex z-20 phone:flex-col phone:h-screen phone:w-72 laptop:items-center laptop:h-12 laptop:flex-row laptop:ease-in-out laptop:duration-300 laptop:justify-center laptop:w-full ${
           scrollDirection === "Steady"
             ? "desktop:top-0"
             : scrollDirection === "Down"
@@ -116,14 +122,14 @@ const Nav = () => {
             : "desktop:top-0"
         }`}
       >
-        <h3 className="text-center phone:text-3xl font-bold text-LightPrimary px-6 py-4">
+        <h3 className="text-center phone:text-3xl font-bold text-LightPrimary px-6 py-4 laptop:py-0">
           TaskFlow
         </h3>
         <motion.ul
           variants={ulVariant}
           animate={ulAnimation}
           initial="hidden"
-          className="flex phone:flex-1 phone:flex-col phone:w-full phone:mt-12 phone:gap-8 laptop:w-[700px] laptop:gap-8 laptop:items-center"
+          className="flex phone:flex-1 phone:flex-col phone:w-full phone:mt-12 phone:gap-8 laptop:mt-0 laptop:w-[700px] laptop:gap-8 laptop:flex-row laptop:items-center"
         >
           <NavChoices
             animationProperties={{

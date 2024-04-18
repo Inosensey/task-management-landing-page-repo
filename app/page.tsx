@@ -34,6 +34,9 @@ export default function Home() {
   //UseEffect
   // Get position on first render
   useEffect(() => {
+    // if (window.innerWidth < 769) {
+    //   setTaskManagementVis(true);
+    // }
     getTaskManagementDivPosition();
   }, []);
   // Get position when resize happens
@@ -67,11 +70,12 @@ export default function Home() {
           </button>
         </div>
         <div
-          ref={taskManagementRef}
-          className={`overflow-hidden flex justify-center items-center relative phone:hidden laptop:phone:mt-16`}
+          className={`overflow-hidden justify-center items-center relative phone:hidden laptop:h-[430px] laptop:w-[500px] laptop:flex laptop:phone:mt-16`}
         >
           <div
-            className={`${"progress-bar"} flex justify-center items-center rounded-[50%] phone:h-[95%] phone:w-[80%]`}
+            className={`${
+              taskManagementVis && "progress-bar"
+            } flex justify-center items-center rounded-[50%] phone:h-[95%] phone:w-[80%]`}
             onAnimationEnd={() => setShowTaskManagement(true)}
           ></div>
           <div
