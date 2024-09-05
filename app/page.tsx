@@ -125,32 +125,32 @@ export default function Home() {
           />
           <Features
             image="sample"
-            name="Smart Notifications and Reminders"
-            desc="Stay on top of your tasks with intelligent notifications and reminders, ensuring you never miss important deadlines or updates"
+            name="Smart Scheduling"
+            desc="Organize your daily activities effortlessly with a flexible schedule that lets you plan tasks for specific days."
             icones={<IcBaselineCircleNotifications />}
           />
           <Features
             image="sample"
-            name="Customizable Workflows"
-            desc="Tailor the task management system to your unique workflow with customizable project categories, task statuses, and labels, enabling you to adapt the system to your preferred organization method"
+            name="Dynamic To-Do List"
+            desc="Stay on track with a to-do list that automatically resets based on your chosen frequency, ensuring tasks remain relevant and 'Active' when needed."
             icones={<CarbonFlow />}
           />
           <Features
             image="sample"
-            name="Visual Task Boards"
-            desc="Visualize your tasks in intuitive Kanban boards or traditional task lists, providing a clear overview of task progress and allowing for easy prioritization and reordering"
+            name="Task-Linked Notes"
+            desc="Enhance productivity by attaching detailed notes to individual tasks, keeping essential information readily accessible."
             icones={<MaterialSymbolsTask />}
           />
           <Features
             image="sample"
-            name="Advanced Search and Filters"
-            desc="Quickly find specific tasks with advanced search functionalities and powerful filters, enabling you to locate tasks based on keywords, dates, categories, or assigned team members"
+            name="Personalized Settings"
+            desc="Customize your profile with ease, tailoring the app’s experience to suit your preferences."
             icones={<MaterialSymbolsScreenSearchDesktopRounded />}
           />
           <Features
             image="sample"
-            name="Insightful Analytics and Reports"
-            desc="Gain valuable insights into your productivity and team performance with visual analytics and reports, tracking task completion rates, time spent, and other key metrics, helping you make data-driven decisions"
+            name="Comprehensive Overview"
+            desc="Stay informed with an overview page that displays your upcoming schedules, tasks for the day, weekly schedule progress, and daily to-do completion."
             icones={<MaterialSymbolsAnalyticsRounded />}
           />
         </div>
